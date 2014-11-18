@@ -1,23 +1,23 @@
 object ExtractorExample{
 
-//  FreeUser.unapply(new FreeUser("Joe"))
-//
-//  val user: User = new PremiumUser("Daniel")
-//  user match {
-//    case FreeUser(name) => "Hello " + name
-//    case PremiumUser(name) => "Welcome back, dear " + name
-//  }
+  FreeUser1.unapply(new FreeUser("Joe"))
 
-
-  def checkUser(user:User1) =user match {
-    case FreeUser1(name, _, p) =>
-      if (p > 0.75 && p<0.9) name + ", what can we do for you today?"
-    case PremiumUser1(name, _) => "Welcome back, dear " + name
-    case fUser @ premiumCandidate() => "Oh yeah ! premiumCandidate" + fUser.name
+  val user: User = new PremiumUser("Daniel")
+  user match {
+    case FreeUser(name) => "Hello " + name
+    case PremiumUser(name) => "Welcome back, dear " + name
   }
 
-  val user1: User1 = new FreeUser1("Daniel", 3000,0.9d)
-  checkUser(user1)
+
+//  def checkUser(user:User1) =user match {
+//    case FreeUser1(name, _, p) =>
+//      if (p > 0.75 && p<0.9) name + ", what can we do for you today?"
+//    case PremiumUser1(name, _) => "Welcome back, dear " + name
+//    case fUser @ premiumCandidate() => "Oh yeah ! premiumCandidate" + fUser.name
+//  }
+//
+//  val user1: User1 = new FreeUser1("Daniel", 3000,0.9d)
+//  checkUser(user1)
 }
 trait User{
   def name :String
