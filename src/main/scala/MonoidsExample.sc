@@ -19,5 +19,6 @@ object MonoidsExample{
 
 
   val stringList = List("this","is","monoid")
+
   stringList.foldRight(stringMonoid.zero)(stringMonoid.operation)
 }

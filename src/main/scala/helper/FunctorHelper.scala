@@ -7,7 +7,7 @@ trait Functor[F[_]] {
   def fmap[A,B](fa:F[A])(f: =>B):F[B] => F[A]
 }
 
-implicit object ListFunctor extends Functor[List] {
-  def fmap[A, B](f: A ⇒ B): List[A] ⇒ List[B]
-  = list ⇒ list map f
-}
+//implicit object ListFunctor extends Functor[List] {
+//  def fmap[A, B](f: A ⇒ B): List[A] ⇒ List[B]
+//  = list ⇒ list map f
+//}
