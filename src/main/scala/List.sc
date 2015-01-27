@@ -31,7 +31,7 @@ object f {
   //Fold : cumulate results using a start value
   //fold(start value) z= accumulator; y=next number
   l.fold(2){ (z,y)=> 2*z-y}
-  l.foldLeft(2){ (z,y)=> 2*z-y}
+  l.foldLeft(0){ (z,y)=> 2*z-y}
   l.foldRight(2){ (z,y)=> 2*z-y}
 
   //reduce : cumulate a single result

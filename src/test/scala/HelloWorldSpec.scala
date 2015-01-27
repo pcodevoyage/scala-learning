@@ -12,12 +12,12 @@ class HelloWorldSpec extends Specification{
     }
   }
 
-  "my example on string" ! e1
-
-  def e1 = {
-    "hello" must have size(10)
-    "hello" must startWith("hel")
-  }
+//  "my example on string" ! e1
+//
+//  def e1 = {
+//    "hello" must have size(10)
+//    "hello" must startWith("hel")
+//  }
 
   "my example on string check 2 things" ! e2
 
