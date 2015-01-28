@@ -1,3 +1,4 @@
+
 object Sum {
 
   trait Monoid[A] {
