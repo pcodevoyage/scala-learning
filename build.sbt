@@ -1,11 +1,23 @@
+
 name := "Notes"
 
+scalaVersion :="2.11.2"
+
+val scalazVersion = "7.1.0"
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "2.4.14" % "test"
+  "org.scalaz" %% "scalaz-core" % scalazVersion,
+  "org.scalaz" %% "scalaz-effect" % scalazVersion,
+  "org.scalaz" %% "scalaz-typelevel" % scalazVersion,
+  "org.scalaz" %% "scalaz-scalacheck-binding" % scalazVersion % "test",
+  "org.specs2" %% "specs2-core" % "2.4.14" % "test"  
 )
 
+scalacOptions += "-feature"
+
 scalacOptions in Test ++= Seq("-Yrangepos")
+
+initialCommands in console :="import scalaz._, Scalaz._"
 
 // Read here for optional jars and dependencies:
 // http://etorreborre.github.io/specs2/guide/org.specs2.guide.Runners.html#Dependencies
