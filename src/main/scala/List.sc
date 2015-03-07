@@ -44,6 +44,7 @@ object f {
 
   filterList.filter(_ % 2 == 0).sorted
 
-
+  val l1 = List(1,2,3,4,5)
+  l1.partition(x => x %2 ==0)
 
 }
