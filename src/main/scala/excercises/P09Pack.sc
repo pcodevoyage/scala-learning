@@ -10,11 +10,14 @@ object P09Pack{
     if (ls.isEmpty) List(List())
     else {
       val (packed, next) = ls span { _ == ls.head }
-      println(packed+" ------- " + next)
+//      println(packed+" ------- " + next)
       if (next == Nil) List(packed)
       else packed :: pack(next)
     }
   }
 
-  pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+  val p =List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+  pack(p)
+//  pack(p) map (e => (e.length,e.head))
+//  pack[Symbol](p).foldRight(List[Symbol]())(x=>x)
 }
