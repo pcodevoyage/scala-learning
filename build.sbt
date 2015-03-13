@@ -10,7 +10,8 @@ libraryDependencies ++= Seq(
   "org.scalaz" %% "scalaz-effect" % scalazVersion,
   "org.scalaz" %% "scalaz-typelevel" % scalazVersion,
   "org.scalaz" %% "scalaz-scalacheck-binding" % scalazVersion % "test",
-  "org.specs2" %% "specs2-core" % "2.4.14" % "test"  
+  "org.specs2" %% "specs2-core" % "2.4.14" % "test" ,
+  "com.rabbitmq" % "amqp-client" % "2.8.1"
 )
 
 scalacOptions += "-feature"

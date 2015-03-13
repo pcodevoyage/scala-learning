@@ -9,6 +9,7 @@ object Fibo{
   }
 
   fibo(4)
+  fibo(2)
 
   def fiboTail(i:Int, sum:Int =0) : Int = {
     if (i==0) return sum
