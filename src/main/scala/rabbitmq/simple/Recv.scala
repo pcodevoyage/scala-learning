@@ -13,16 +13,16 @@ object Recv extends MqHelper{
   def main (args: Array[String]) {
     init()
 
-    channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-    System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+    channel.queueDeclare(QUEUE_NAME, false, false, false, null)
+    println(" [*] Waiting for messages. To exit press CTRL+C")
 
-    val consumer = new QueueingConsumer(channel);
-    channel.basicConsume(QUEUE_NAME, true, consumer);
+    val consumer = new QueueingConsumer(channel)
+    channel.basicConsume(QUEUE_NAME, true, consumer)
 
     while (true) {
-      val delivery = consumer.nextDelivery();
-      val message = new String(delivery.getBody());
-      System.out.println(" [x] Received '" + message + "'");
+      val delivery = consumer.nextDelivery()
+      val message = new String(delivery.getBody())
+      println(" [x] Received '" + message + "'")
     }
   }
 
