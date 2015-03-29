@@ -71,8 +71,7 @@ object P09Pack {
       val (packed, next) = ls span {
         _ == ls.head
       }
-      if (next == Nil) (packed.length,packed.head) :: Nil
-      else  (packed.length,packed.head):: encodeDirect(next)
+      (packed.length,packed.head):: encodeDirect(next)
     }
   }
 
