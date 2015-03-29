@@ -20,4 +20,5 @@ object CurriedFunc{
   def addM1 = addM(4,_:Int,_:Int)
 
   addM1(1,2)
+
 }
