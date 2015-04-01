@@ -17,8 +17,24 @@ object MethodInjection{
       def mzero: String = ""
     }
   }
-
-  def plus[A:Monoid[A]](a:A,b:A):A = implicitly[Monoid[A]].mappend(a,b)
+  def plus[A: Monoid](a: A, b: A): A = implicitly[Monoid[A]].mappend(a, b)
 
   plus(3,4)
+
+  trait MoniodOp[A]{
+    val F:Monoid[A]
+    val value : A
+    def |+| (a2:A)=F.mappend(value,a2)
+  }
+
+  implicit def toMonoidOp[A:Monoid](a:A): MoniodOp[A]= new MoniodOp[A] {
+    val  F = implicitly[Monoid[A]]
+    val value =a
+  }
+
+  3 |+| 4
+
+  "this" |+| " is" |+| " great"
+
+  Some(1) | 2
 }
