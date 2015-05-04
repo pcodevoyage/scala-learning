@@ -22,7 +22,6 @@ def recursive[A](l: List[A], i: Int): (List[A], List[A]) = (i, l) match {
     val (pre, post) = recursive(tail, i - 1)
     (h :: pre, post)
   }
-
 }
 
 recursive(l, 3)

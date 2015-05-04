@@ -1,13 +1,11 @@
 object MapAndFlatMap{
 
   val s:String = "this is great"
-
   //With map you are taking a list of characters and turning it
   //into a list of strings. That's the result you see.
   //A map never changes the length of a list – the list of strings has
   // as many elements as the original string has characters.
   s map (c => c + "-")
-
   //With flatMap you are taking a list of characters and turning it into
   // a list of strings and then you mush those strings together into a single
   // string again. flatMap is useful when you want to turn one element in a
@@ -18,18 +16,19 @@ object MapAndFlatMap{
   // flapMap = map then flatten
   s flatMap (c=>c + "-")
 
-
   val couples = List(List("kim", "al"), List("julia", "terry"))
-
   val people = couples.flatten
-
   val mapC =couples map ( c => "add" :: c)
-
   val mapCthenFlatten =couples map ( c => "add" :: c) flatten
-
   val flatMapC=couples flatMap( c=> "add" :: c)
-
   val isFlatMapSameAsMapThenFatten = flatMapC == mapCthenFlatten
-
   couples flatMap( c=> "add" :: c) flatten
+
+
+
+  val l = List(1,3,4,5)
+  l map (_*2)
+  val ll = List(List(1,3,5),List(1),List(3,4))
+
+  ll.map(_=>1)
 }
