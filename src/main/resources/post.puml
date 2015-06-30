@@ -1,0 +1,35 @@
+@startuml
+title Adding new container scenario [Write]
+autonumber
+User  [#red]-> Application : Add Container PL1 at location Loc1
+Application [#black]-> DB : New container added to container table
+Application [#green]-> Application : New container created event\nemitted by entity PL1
+Application --> User : Confirm container added
+Application [#black]-> DB : ContainerLocation view captures the\nevent and adds an entry PL1 -> Loc1\nto ContainerLocation table
+legend right
+  <font size="10">Red arrow : Command
+  <font size="10">Green arrow: Event
+  <font size="10">Black arrow : DB Call
+endlegend
+@enduml
+
+@startuml
+title Get location of container [Read]
+autonumber
+User -> Application : What is the location of PL1
+Application [#black]-> DB : Query ContainerLocation table for PL1
+DB [#black]--> Application : Loc1
+Application --> User : Location of PL1 is Loc1
+@enduml
+
+@startuml
+title Change location of the container [Write/Modify]
+autonumber
+User  [#red]-> Application : Container PL1 moved to location Loc53
+Application [#black]-> DB : Retrive PL1 from container table.
+DB [#black]--> Application : Container PL1
+Application [#black]-> DB : Update location of PL1 to Loc53
+Application [#green]-> Application : Location change event\nemitted by entity PL1
+Application --> User : Confirm location update
+Application [#black]-> DB : ContainerLocation view captures the\nevent and updatesan entry PL1 -> Loc53\nin ContainerLocation table
+@enduml
