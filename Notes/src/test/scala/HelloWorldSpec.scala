@@ -1,9 +1,7 @@
 package com.test
 import org.specs2.mutable._
 
-/**
- * Created by p.samaddar on 04/12/2014.
- */
+
 class HelloWorldSpec extends Specification{
 
   "This 'Hellow world' string" should{
