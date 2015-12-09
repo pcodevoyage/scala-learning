@@ -23,7 +23,6 @@ class StackLinkedListTest extends FlatSpec with Matchers {
   "A stack" should "return true if stack is empty" in {
     val stack = new StackLinkedList
     stack shouldBe 'isEmpty
-//    stack should not be 'isEmpty
   }
 }
 

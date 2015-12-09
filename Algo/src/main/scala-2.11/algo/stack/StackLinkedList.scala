@@ -5,32 +5,38 @@ trait Stack[A]{
   def push(item:A)
   def isEmpty():Boolean
 }
-class StackLinkedList[A] extends Stack[A]{
+
+class StackLinkedList[A] extends Stack[A] with Iterable[A]{
 
   private case class Item(content:A,next:Item)
 
-  private var head:Item =null
+  private var headElement:Item =null
 
-  override def pop(): A = {
-    if(head==null)
-      throw new NoSuchElementException()
-    else {
-      val content = head.content
-      head= head.next
+  override def pop(): A = headElement match {
+    case null => throw new NoSuchElementException
+    case _ => {
+      val content = headElement.content
+      headElement= headElement.next
       content
     }
   }
 
-  override def push(item: A):Unit ={
-    if(head==null){
-      head = new Item(item,null)
-    } else {
-      val tmp = new Item(item,head)
-      head=tmp
+  override def push(item: A):Unit = headElement match {
+    case null => headElement = new Item(item,null)
+    case _ => {
+      val tmp = new Item(item,headElement)
+      headElement=tmp
     }
   }
 
-  override def isEmpty(): Boolean = head ==null
+  override def isEmpty(): Boolean = headElement ==null
+
+  override def iterator: Iterator[A] = PrivateIterator
+
+  private object PrivateIterator extends Iterator[A]{
+    override def hasNext: Boolean = !isEmpty
+    override def next(): A = pop()
+  }
 }
 
 
