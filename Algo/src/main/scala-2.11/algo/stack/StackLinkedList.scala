@@ -31,16 +31,16 @@ class StackLinkedList[A] extends Stack[A] with Iterable[A]{
 
   override def isEmpty(): Boolean = headElement ==null
 
-  override def iterator: Iterator[A] = new PrivateIterator(this)
+  override def iterator: Iterator[A] = new StackIterator(this)
 
 
 }
-class PrivateIterator[A](stackLinkedList: StackLinkedList[A]) extends Iterator[A]{
+class StackIterator[A](stackLinkedList: Stack[A]) extends Iterator[A]{
   override def hasNext: Boolean = !stackLinkedList.isEmpty()
   override def next(): A =stackLinkedList.pop()
 }
 
-class StackArray[A:Manifest] extends Stack[A] {
+class StackArray[A:Manifest] extends Stack[A] with Iterable[A]{
 
   var array = new Array[A](5)
   var nextEmptyHead = 0;
@@ -77,4 +77,6 @@ class StackArray[A:Manifest] extends Stack[A] {
     }
   }
   override def isEmpty(): Boolean = nextEmptyHead==0
+
+  override def iterator: Iterator[A] = new StackIterator[A](this)
 }

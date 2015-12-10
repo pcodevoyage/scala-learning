@@ -1,0 +1,5 @@
+Total order
+------------
+-> Antisymmetry : if v <= w and w <=v then v==w
+-> Transitivity : if x <= v and v<= w then x <=w
+-> Totality : either v <=w  or w <= v or both

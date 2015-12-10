@@ -6,7 +6,7 @@ import algo.stack.StackLinkedList
 // )        = pop from operator stack and pop two values. Apply operation and add result
 //            back to to the value stack
 object  v {
-  val exp = "((2+3)*(4+1))"
+  val exp = "(2*(1+(2+3)))"
   val valueStack = new StackLinkedList[Int]
   val operatorStack = new StackLinkedList[String]
   def compute = {
