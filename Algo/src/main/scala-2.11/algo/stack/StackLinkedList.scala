@@ -32,8 +32,6 @@ class StackLinkedList[A] extends Stack[A] with Iterable[A]{
   override def isEmpty(): Boolean = headElement ==null
 
   override def iterator: Iterator[A] = new StackIterator(this)
-
-
 }
 class StackIterator[A](stackLinkedList: Stack[A]) extends Iterator[A]{
   override def hasNext: Boolean = !stackLinkedList.isEmpty()
