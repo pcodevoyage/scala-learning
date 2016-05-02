@@ -1,4 +1,4 @@
-import algo.sort.{SelectionSorter, InsertionSorter}
+import algo.sort.{InsertionSorter, SelectionSorter}
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -15,3 +15,4 @@ val insertionSorter = new InsertionSorter[Int]
 insertionSorter.sort(buffer1)
 buffer1
 assert(insertionSorter.sorted(buffer1))
+

@@ -17,3 +17,8 @@ Insertion Sort
 As the pointer moves forward the elements on the left are sorted.
 
 Using the pointer value moving left find the first element that is bigger than the value at hand and swap with it.
+
+
+Shell Sort
+-------------
+Same as insertion sort but interval is n instead of 1
